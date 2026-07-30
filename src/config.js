@@ -19,13 +19,14 @@ export default {
         'https://github.com/Alvin9999/new-pac/wiki/v2ray%E5%85%8D%E8%B4%B9%E8%B4%A6%E5%8F%B7',
         'https://github.com/shaoyouvip/free',
         'https://github.com/hwanz/SSR-V2ray-Trojan-vpn'
+        'https://www.cfmem.com/'
     ],
     
     // 抓取设置
     crawler: {
         maxRequestsPerCrawl: 50,
         requestTimeoutSecs: 30,
-        maxDepth: 2, // 爬取深度: 1=只爬当前页, 2=爬当前页+它包含的链接
+        maxDepth: 3, // 爬取深度: 1=只爬当前页, 2=爬当前页+它包含的链接
     },
 
     // 验证设置
