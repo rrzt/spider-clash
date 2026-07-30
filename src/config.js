@@ -18,7 +18,7 @@ export default {
         'https://github.com/John19187/v2ray-SSR-Clash-Verge-Shadowrocke',
         'https://github.com/Alvin9999/new-pac/wiki/v2ray%E5%85%8D%E8%B4%B9%E8%B4%A6%E5%8F%B7',
         'https://github.com/shaoyouvip/free',
-        'https://github.com/hwanz/SSR-V2ray-Trojan-vpn'
+        'https://github.com/hwanz/SSR-V2ray-Trojan-vpn',
         'https://www.cfmem.com'
     ],
     
