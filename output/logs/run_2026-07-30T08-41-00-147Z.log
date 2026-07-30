@@ -1,0 +1,55 @@
+=== Spider-Clash Run Log ===
+Date: 2026-07-30T08:41:00.147Z
+Duration: 40337ms
+
+[Statistics]
+Total Raw Links Found: 716
+Valid Format Nodes: 588
+Validated Available Nodes: 69
+
+[Errors]
+None
+
+[Config]
+Sources: [
+  "https://oneclash.cc/a/*.html",
+  "https://oneclash.cc/a/2312.html",
+  "https://clashnodev2ray.github.io/",
+  "https://clashnodev2ray.github.io/2025/12/12/free-ssr-node/",
+  "https://github.com/free-nodes/v2rayfree",
+  "https://freenode.openrunner.net/tag/v2ray/",
+  "https://freenode.openrunner.net/post/20251212/",
+  "https://www.cfmem.com/search/label/free",
+  "https://clashgithub.com/category/freenode",
+  "https://github.com/free-nodes/clashfree",
+  "https://github.com/free18/v2ray",
+  "https://github.com/Pawdroid/Free-servers",
+  "https://github.com/John19187/v2ray-SSR-Clash-Verge-Shadowrocke",
+  "https://github.com/Alvin9999/new-pac/wiki/v2ray%E5%85%8D%E8%B4%B9%E8%B4%A6%E5%8F%B7",
+  "https://github.com/shaoyouvip/free",
+  "https://github.com/hwanz/SSR-V2ray-Trojan-vpn",
+  "https://nodefree.me",
+  "https://v2rayshare.net",
+  "https://t.me/s/changfengchannel",
+  "https://jichangx.com/free-subscription",
+  "https://clashstair.com/category/freenode",
+  "https://nodebuf.com",
+  "https://clashgithub.com/category/freenode",
+  "https://www.freeclashnode.com/free-node",
+  "https://www.mibei77.com",
+  "https://clashnodev2ray.github.io",
+  "https://t.me/s/clashjd",
+  "https://www.proxyqueen.top",
+  "https://t.me/s/v2queen",
+  "https://wanzhuanmi.com",
+  "https://clashnode.cc/free-node",
+  "https://free.datiya.com",
+  "https://clashgithub.com",
+  "https://oneclash.cc/freenode",
+  "https://www.freev2raynode.com/free-node-subscription",
+  "https://www.85la.com/internet-access/free-network-nodes",
+  "https://www.stairnode.com/daily",
+  "https://t.me/s/StairNode",
+  "https://www.cfmem.com"
+]
+============================
