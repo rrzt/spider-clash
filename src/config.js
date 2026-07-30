@@ -20,6 +20,8 @@ export default {
         'https://github.com/shaoyouvip/free',
         'https://github.com/hwanz/SSR-V2ray-Trojan-vpn',
         'https://nodefree.me',
+        'https://v2rayshare.net',
+        'https://t.me/s/changfengchannel',
         'https://www.cfmem.com'
     ],
     
