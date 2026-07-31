@@ -106,37 +106,6 @@ proxies:
       path: /hls/cctv5phd.m3u8
       headers:
         Host: ajax.microsoft.com
-  - name: US美国(v2clash.blog 2026-6.4更新) - undefinedms
-    type: vmess
-    server: 82.198.246.250
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    network: tcp
-  - name: DE德国(v2clash.blog 2026-6.4更新) - undefinedms
-    type: vmess
-    server: 82.198.246.250
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    network: tcp
-  - name: FR法国(v2clash.blog 2026-7.29更新) - undefinedms
-    type: vmess
-    server: 2001:bc8:32d7:225::3
-    port: 55009
-    uuid: cd80d0a4-a8ef-4492-b956-da82a6cecaf9
-    alterId: 0
-    cipher: auto
-    tls: false
-    network: ws
-    ws-opts:
-      path: /0zNW56sF
-      headers:
-        Host: 2001:bc8:32d7:225::3
   - name: 香港(免费节点)_1 - undefinedms
     type: vmess
     server: 93ucrn4i0pffuabk.v.3dns.vip
@@ -293,6 +262,37 @@ proxies:
       path: /ws-vmess
       headers:
         Host: zUDssgTMRqg9LpvI.v.3dns.vip
+  - name: US美国(v2clash.blog 2026-6.4更新) - undefinedms
+    type: vmess
+    server: 82.198.246.250
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    network: tcp
+  - name: DE德国(v2clash.blog 2026-6.4更新) - undefinedms
+    type: vmess
+    server: 82.198.246.250
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    network: tcp
+  - name: FR法国(v2clash.blog 2026-7.29更新) - undefinedms
+    type: vmess
+    server: 2001:bc8:32d7:225::3
+    port: 55009
+    uuid: cd80d0a4-a8ef-4492-b956-da82a6cecaf9
+    alterId: 0
+    cipher: auto
+    tls: false
+    network: ws
+    ws-opts:
+      path: /0zNW56sF
+      headers:
+        Host: 2001:bc8:32d7:225::3
   - name: 🇨🇳_CN_中国->🇺🇸_US_美国 - undefinedms
     type: vmess
     server: v29.hdacd.com
@@ -417,9 +417,6 @@ proxy-groups:
       - 🇲🇾_马来西亚_190 - undefinedms
       - 🇫🇷_法国_192 - undefinedms
       - 🇲🇽_墨西哥_203 - undefinedms
-      - US美国(v2clash.blog 2026-6.4更新) - undefinedms
-      - DE德国(v2clash.blog 2026-6.4更新) - undefinedms
-      - FR法国(v2clash.blog 2026-7.29更新) - undefinedms
       - 香港(免费节点)_1 - undefinedms
       - 香港(免费节点)_2 - undefinedms
       - 香港(免费节点)_3 - undefinedms
@@ -432,6 +429,9 @@ proxy-groups:
       - 法国(免费节点)_6 - undefinedms
       - 英国(免费节点)_4 - undefinedms
       - 香港(免费节点)_8 - undefinedms
+      - US美国(v2clash.blog 2026-6.4更新) - undefinedms
+      - DE德国(v2clash.blog 2026-6.4更新) - undefinedms
+      - FR法国(v2clash.blog 2026-7.29更新) - undefinedms
       - 🇨🇳_CN_中国->🇺🇸_US_美国 - undefinedms
       - 🇭🇰_HK_中国香港 - undefinedms
       - 🇺🇸_US_美国 - undefinedms
@@ -458,9 +458,6 @@ proxy-groups:
       - 🇲🇾_马来西亚_190 - undefinedms
       - 🇫🇷_法国_192 - undefinedms
       - 🇲🇽_墨西哥_203 - undefinedms
-      - US美国(v2clash.blog 2026-6.4更新) - undefinedms
-      - DE德国(v2clash.blog 2026-6.4更新) - undefinedms
-      - FR法国(v2clash.blog 2026-7.29更新) - undefinedms
       - 香港(免费节点)_1 - undefinedms
       - 香港(免费节点)_2 - undefinedms
       - 香港(免费节点)_3 - undefinedms
@@ -473,6 +470,9 @@ proxy-groups:
       - 法国(免费节点)_6 - undefinedms
       - 英国(免费节点)_4 - undefinedms
       - 香港(免费节点)_8 - undefinedms
+      - US美国(v2clash.blog 2026-6.4更新) - undefinedms
+      - DE德国(v2clash.blog 2026-6.4更新) - undefinedms
+      - FR法国(v2clash.blog 2026-7.29更新) - undefinedms
       - 🇨🇳_CN_中国->🇺🇸_US_美国 - undefinedms
       - 🇭🇰_HK_中国香港 - undefinedms
       - 🇺🇸_US_美国 - undefinedms

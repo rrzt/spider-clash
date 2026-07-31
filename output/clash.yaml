@@ -18,7 +18,7 @@ proxies:
       path: /1IKYjV0r/
       headers:
         Host: dongtaiwang15.dtku47.xyz
-  - name: 🇺🇸_美国_151 - 116ms
+  - name: 🇺🇸_美国_151 - 54ms
     type: vmess
     server: guanwang.awsno.com
     port: 443
@@ -27,7 +27,7 @@ proxies:
     cipher: auto
     tls: true
     network: tcp
-  - name: 🇨🇳_中国_152 - 352ms
+  - name: 🇨🇳_中国_152 - 192ms
     type: vmess
     server: v9.hdacd.com
     port: 30809
@@ -36,7 +36,7 @@ proxies:
     cipher: auto
     tls: false
     network: tcp
-  - name: 🇭🇰_香港_153 - 730ms
+  - name: 🇭🇰_香港_153 - 147ms
     type: vmess
     server: 47.86.167.194
     port: 800
@@ -45,7 +45,7 @@ proxies:
     cipher: auto
     tls: false
     network: tcp
-  - name: 🇮🇷_伊朗_156 - 213ms
+  - name: 🇮🇷_伊朗_156 - 308ms
     type: vmess
     server: tun1.wizardx1.com
     port: 2078
@@ -54,7 +54,7 @@ proxies:
     cipher: auto
     tls: false
     network: tcp
-  - name: 🇲🇾_马来西亚_190 - 361ms
+  - name: 🇲🇾_马来西亚_190 - 311ms
     type: vmess
     server: cindy52.ceoiii.com
     port: 36803
@@ -67,7 +67,7 @@ proxies:
       path: /hls/cctv5phd.m3u8
       headers:
         Host: ajax.microsoft.com
-  - name: 🇲🇽_墨西哥_203 - 212ms
+  - name: 🇲🇽_墨西哥_203 - 121ms
     type: vmess
     server: cindy50.ceoiii.com
     port: 36801
@@ -80,25 +80,7 @@ proxies:
       path: /hls/cctv5phd.m3u8
       headers:
         Host: ajax.microsoft.com
-  - name: US美国(v2clash.blog 2026-6.4更新) - 61ms
-    type: vmess
-    server: 82.198.246.250
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    network: tcp
-  - name: DE德国(v2clash.blog 2026-6.4更新) - 63ms
-    type: vmess
-    server: 82.198.246.250
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    network: tcp
-  - name: 香港(免费节点)_1 - 1330ms
+  - name: 香港(免费节点)_1 - 811ms
     type: vmess
     server: 93ucrn4i0pffuabk.v.3dns.vip
     port: 443
@@ -111,7 +93,7 @@ proxies:
       path: /ws-vmess
       headers:
         Host: 93ucrn4i0PffUAbk.v.3dns.vip
-  - name: 香港(免费节点)_2 - 1395ms
+  - name: 香港(免费节点)_2 - 1168ms
     type: vmess
     server: qtkdr8jxe3wefxjm.v.3dns.vip
     port: 443
@@ -124,7 +106,7 @@ proxies:
       path: /ws-vmess
       headers:
         Host: qTKDR8jXE3wEFxJM.v.3dns.vip
-  - name: 香港(免费节点)_3 - 1634ms
+  - name: 香港(免费节点)_3 - 1178ms
     type: vmess
     server: m01c7b2z26dtqgee.v.3dns.vip
     port: 443
@@ -137,7 +119,7 @@ proxies:
       path: /ws-vmess
       headers:
         Host: M01c7B2z26DtQGEe.v.3dns.vip
-  - name: 香港(免费节点)_4 - 1364ms
+  - name: 香港(免费节点)_4 - 1186ms
     type: vmess
     server: mh7r5ardl0z5jtgy.v.3dns.vip
     port: 443
@@ -150,7 +132,7 @@ proxies:
       path: /ws-vmess
       headers:
         Host: mh7R5ArdL0z5jTGY.v.3dns.vip
-  - name: 香港(免费节点)_5 - 1464ms
+  - name: 香港(免费节点)_5 - 1678ms
     type: vmess
     server: vah4urdzl3jdx5r2.v.3dns.vip
     port: 443
@@ -163,7 +145,7 @@ proxies:
       path: /ws-vmess
       headers:
         Host: VAH4URdZL3jDX5r2.v.3dns.vip
-  - name: 香港(免费节点)_6 - 1431ms
+  - name: 香港(免费节点)_6 - 1825ms
     type: vmess
     server: ejomsxptp19apygl.v.3dns.vip
     port: 443
@@ -176,7 +158,7 @@ proxies:
       path: /ws-vmess
       headers:
         Host: ejOMsxPtP19APyGL.v.3dns.vip
-  - name: 美国(免费节点)_3 - 1734ms
+  - name: 美国(免费节点)_3 - 1462ms
     type: vmess
     server: wwafj5lhl6bi8au9.v.3dns.vip
     port: 443
@@ -189,7 +171,7 @@ proxies:
       path: /ws-vmess
       headers:
         Host: wwafj5LHl6bI8aU9.v.3dns.vip
-  - name: 美国(免费节点)_7 - 1669ms
+  - name: 美国(免费节点)_7 - 1782ms
     type: vmess
     server: 2b9hwy8ocx7q74nm.v.3dns.vip
     port: 443
@@ -202,7 +184,20 @@ proxies:
       path: /ws-vmess
       headers:
         Host: 2b9hwY8oCx7Q74NM.v.3dns.vip
-  - name: 英国(免费节点)_4 - 510ms
+  - name: 香港(免费节点)_7 - 1773ms
+    type: vmess
+    server: u2frxj0g13vdi0wo.v.3dns.vip
+    port: 443
+    uuid: f23bb427c1f94373876c2f43e9f790f3
+    alterId: 0
+    cipher: auto
+    tls: true
+    network: ws
+    ws-opts:
+      path: /ws-vmess
+      headers:
+        Host: U2FRxj0G13vDI0Wo.v.3dns.vip
+  - name: 英国(免费节点)_4 - 668ms
     type: vmess
     server: mtckundigepwu3up.v.3dns.vip
     port: 443
@@ -215,7 +210,7 @@ proxies:
       path: /ws-vmess
       headers:
         Host: mTCKUNDiGePwU3uP.v.3dns.vip
-  - name: 香港(免费节点)_8 - 513ms
+  - name: 香港(免费节点)_8 - 1184ms
     type: vmess
     server: zudssgtmrqg9lpvi.v.3dns.vip
     port: 443
@@ -228,7 +223,25 @@ proxies:
       path: /ws-vmess
       headers:
         Host: zUDssgTMRqg9LpvI.v.3dns.vip
-  - name: 🇨🇳_CN_中国->🇺🇸_US_美国 - 545ms
+  - name: US美国(v2clash.blog 2026-6.4更新) - 9ms
+    type: vmess
+    server: 82.198.246.250
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    network: tcp
+  - name: DE德国(v2clash.blog 2026-6.4更新) - 9ms
+    type: vmess
+    server: 82.198.246.250
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    network: tcp
+  - name: 🇨🇳_CN_中国->🇺🇸_US_美国 - 448ms
     type: vmess
     server: v29.hdacd.com
     port: 30829
@@ -237,7 +250,7 @@ proxies:
     cipher: auto
     tls: false
     network: tcp
-  - name: 🇭🇰_HK_中国香港 - 688ms
+  - name: 🇭🇰_HK_中国香港 - 596ms
     type: vmess
     server: n1747624260.4u9ma.icu
     port: 443
@@ -250,7 +263,7 @@ proxies:
       path: /
       headers:
         Host: n1747624260.4u9ma.icu
-  - name: 🇺🇸_US_美国 - 494ms
+  - name: 🇺🇸_US_美国 - 387ms
     type: vmess
     server: guanwang.awsno.com
     port: 443
@@ -259,7 +272,7 @@ proxies:
     cipher: auto
     tls: true
     network: tcp
-  - name: 🇯🇵_JP_日本->🇸🇬_SG_新加坡 - 628ms
+  - name: 🇯🇵_JP_日本->🇸🇬_SG_新加坡 - 536ms
     type: vmess
     server: v45.hdacd.com
     port: 30845
@@ -268,7 +281,7 @@ proxies:
     cipher: auto
     tls: false
     network: tcp
-  - name: 🇭🇰_HK_中国香港 - 202ms
+  - name: 🇭🇰_HK_中国香港 - 147ms
     type: vmess
     server: 47.244.120.197
     port: 44867
@@ -281,7 +294,7 @@ proxies:
       path: /arki?ed=2048
       headers:
         Host: 47.244.120.197
-  - name: 🇨🇳_CN_中国->🇺🇸_US_美国 - 660ms
+  - name: 🇨🇳_CN_中国->🇺🇸_US_美国 - 470ms
     type: vmess
     server: v4.hdacd.com
     port: 30804
@@ -290,7 +303,7 @@ proxies:
     cipher: auto
     tls: false
     network: tcp
-  - name: 🇨🇳_CN_中国->🇺🇸_US_美国 - 660ms
+  - name: 🇨🇳_CN_中国->🇺🇸_US_美国 - 536ms
     type: vmess
     server: v8.hdacd.com
     port: 30808
@@ -299,7 +312,7 @@ proxies:
     cipher: auto
     tls: false
     network: tcp
-  - name: 🇯🇵_JP_日本->🇺🇸_US_美国 - 712ms
+  - name: 🇯🇵_JP_日本->🇺🇸_US_美国 - 611ms
     type: vmess
     server: v24.hdacd.com
     port: 30824
@@ -308,7 +321,7 @@ proxies:
     cipher: auto
     tls: false
     network: tcp
-  - name: 🇨🇳_CN_中国->🇩🇪_DE_德国 - 711ms
+  - name: 🇨🇳_CN_中国->🇩🇪_DE_德国 - 611ms
     type: vmess
     server: v33.hdacd.com
     port: 30833
@@ -317,7 +330,7 @@ proxies:
     cipher: auto
     tls: false
     network: tcp
-  - name: 日本(免费节点)_1 - 92ms
+  - name: 日本(免费节点)_1 - 40ms
     type: vmess
     server: yg1.ygkkk.dpdns.org
     port: 443
@@ -335,34 +348,35 @@ proxy-groups:
     type: url-test
     proxies:
       - TG-@vvkj11 - 2ms
-      - 🇺🇸_美国_151 - 116ms
-      - 🇨🇳_中国_152 - 352ms
-      - 🇭🇰_香港_153 - 730ms
-      - 🇮🇷_伊朗_156 - 213ms
-      - 🇲🇾_马来西亚_190 - 361ms
-      - 🇲🇽_墨西哥_203 - 212ms
-      - US美国(v2clash.blog 2026-6.4更新) - 61ms
-      - DE德国(v2clash.blog 2026-6.4更新) - 63ms
-      - 香港(免费节点)_1 - 1330ms
-      - 香港(免费节点)_2 - 1395ms
-      - 香港(免费节点)_3 - 1634ms
-      - 香港(免费节点)_4 - 1364ms
-      - 香港(免费节点)_5 - 1464ms
-      - 香港(免费节点)_6 - 1431ms
-      - 美国(免费节点)_3 - 1734ms
-      - 美国(免费节点)_7 - 1669ms
-      - 英国(免费节点)_4 - 510ms
-      - 香港(免费节点)_8 - 513ms
-      - 🇨🇳_CN_中国->🇺🇸_US_美国 - 545ms
-      - 🇭🇰_HK_中国香港 - 688ms
-      - 🇺🇸_US_美国 - 494ms
-      - 🇯🇵_JP_日本->🇸🇬_SG_新加坡 - 628ms
-      - 🇭🇰_HK_中国香港 - 202ms
-      - 🇨🇳_CN_中国->🇺🇸_US_美国 - 660ms
-      - 🇨🇳_CN_中国->🇺🇸_US_美国 - 660ms
-      - 🇯🇵_JP_日本->🇺🇸_US_美国 - 712ms
-      - 🇨🇳_CN_中国->🇩🇪_DE_德国 - 711ms
-      - 日本(免费节点)_1 - 92ms
+      - 🇺🇸_美国_151 - 54ms
+      - 🇨🇳_中国_152 - 192ms
+      - 🇭🇰_香港_153 - 147ms
+      - 🇮🇷_伊朗_156 - 308ms
+      - 🇲🇾_马来西亚_190 - 311ms
+      - 🇲🇽_墨西哥_203 - 121ms
+      - 香港(免费节点)_1 - 811ms
+      - 香港(免费节点)_2 - 1168ms
+      - 香港(免费节点)_3 - 1178ms
+      - 香港(免费节点)_4 - 1186ms
+      - 香港(免费节点)_5 - 1678ms
+      - 香港(免费节点)_6 - 1825ms
+      - 美国(免费节点)_3 - 1462ms
+      - 美国(免费节点)_7 - 1782ms
+      - 香港(免费节点)_7 - 1773ms
+      - 英国(免费节点)_4 - 668ms
+      - 香港(免费节点)_8 - 1184ms
+      - US美国(v2clash.blog 2026-6.4更新) - 9ms
+      - DE德国(v2clash.blog 2026-6.4更新) - 9ms
+      - 🇨🇳_CN_中国->🇺🇸_US_美国 - 448ms
+      - 🇭🇰_HK_中国香港 - 596ms
+      - 🇺🇸_US_美国 - 387ms
+      - 🇯🇵_JP_日本->🇸🇬_SG_新加坡 - 536ms
+      - 🇭🇰_HK_中国香港 - 147ms
+      - 🇨🇳_CN_中国->🇺🇸_US_美国 - 470ms
+      - 🇨🇳_CN_中国->🇺🇸_US_美国 - 536ms
+      - 🇯🇵_JP_日本->🇺🇸_US_美国 - 611ms
+      - 🇨🇳_CN_中国->🇩🇪_DE_德国 - 611ms
+      - 日本(免费节点)_1 - 40ms
     url: http://www.gstatic.com/generate_204
     interval: 300
   - name: Proxy
@@ -370,33 +384,34 @@ proxy-groups:
     proxies:
       - Auto Select
       - TG-@vvkj11 - 2ms
-      - 🇺🇸_美国_151 - 116ms
-      - 🇨🇳_中国_152 - 352ms
-      - 🇭🇰_香港_153 - 730ms
-      - 🇮🇷_伊朗_156 - 213ms
-      - 🇲🇾_马来西亚_190 - 361ms
-      - 🇲🇽_墨西哥_203 - 212ms
-      - US美国(v2clash.blog 2026-6.4更新) - 61ms
-      - DE德国(v2clash.blog 2026-6.4更新) - 63ms
-      - 香港(免费节点)_1 - 1330ms
-      - 香港(免费节点)_2 - 1395ms
-      - 香港(免费节点)_3 - 1634ms
-      - 香港(免费节点)_4 - 1364ms
-      - 香港(免费节点)_5 - 1464ms
-      - 香港(免费节点)_6 - 1431ms
-      - 美国(免费节点)_3 - 1734ms
-      - 美国(免费节点)_7 - 1669ms
-      - 英国(免费节点)_4 - 510ms
-      - 香港(免费节点)_8 - 513ms
-      - 🇨🇳_CN_中国->🇺🇸_US_美国 - 545ms
-      - 🇭🇰_HK_中国香港 - 688ms
-      - 🇺🇸_US_美国 - 494ms
-      - 🇯🇵_JP_日本->🇸🇬_SG_新加坡 - 628ms
-      - 🇭🇰_HK_中国香港 - 202ms
-      - 🇨🇳_CN_中国->🇺🇸_US_美国 - 660ms
-      - 🇨🇳_CN_中国->🇺🇸_US_美国 - 660ms
-      - 🇯🇵_JP_日本->🇺🇸_US_美国 - 712ms
-      - 🇨🇳_CN_中国->🇩🇪_DE_德国 - 711ms
-      - 日本(免费节点)_1 - 92ms
+      - 🇺🇸_美国_151 - 54ms
+      - 🇨🇳_中国_152 - 192ms
+      - 🇭🇰_香港_153 - 147ms
+      - 🇮🇷_伊朗_156 - 308ms
+      - 🇲🇾_马来西亚_190 - 311ms
+      - 🇲🇽_墨西哥_203 - 121ms
+      - 香港(免费节点)_1 - 811ms
+      - 香港(免费节点)_2 - 1168ms
+      - 香港(免费节点)_3 - 1178ms
+      - 香港(免费节点)_4 - 1186ms
+      - 香港(免费节点)_5 - 1678ms
+      - 香港(免费节点)_6 - 1825ms
+      - 美国(免费节点)_3 - 1462ms
+      - 美国(免费节点)_7 - 1782ms
+      - 香港(免费节点)_7 - 1773ms
+      - 英国(免费节点)_4 - 668ms
+      - 香港(免费节点)_8 - 1184ms
+      - US美国(v2clash.blog 2026-6.4更新) - 9ms
+      - DE德国(v2clash.blog 2026-6.4更新) - 9ms
+      - 🇨🇳_CN_中国->🇺🇸_US_美国 - 448ms
+      - 🇭🇰_HK_中国香港 - 596ms
+      - 🇺🇸_US_美国 - 387ms
+      - 🇯🇵_JP_日本->🇸🇬_SG_新加坡 - 536ms
+      - 🇭🇰_HK_中国香港 - 147ms
+      - 🇨🇳_CN_中国->🇺🇸_US_美国 - 470ms
+      - 🇨🇳_CN_中国->🇺🇸_US_美国 - 536ms
+      - 🇯🇵_JP_日本->🇺🇸_US_美国 - 611ms
+      - 🇨🇳_CN_中国->🇩🇪_DE_德国 - 611ms
+      - 日本(免费节点)_1 - 40ms
 rules:
   - MATCH,Proxy
