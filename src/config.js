@@ -62,7 +62,7 @@ export default {
     
     // 抓取设置
     crawler: {
-        maxRequestsPerCrawl: 50,
+        maxRequestsPerCrawl: 150,
         requestTimeoutSecs: 30,
         maxDepth: 3, // 爬取深度: 1=只爬当前页, 2=爬当前页+它包含的链接
     },
