@@ -58,6 +58,7 @@ export async function crawlSources() {
     });
 
     console.log(`Starting crawl. Direct: ${directUrls.length}, Pages: ${pageUrls.length}, Globs: ${globs.length}`);
+    console.log('Globs array:', globs);  // 调试：打印 globs 数组
 
     // ==================== 处理直接订阅链接 ====================
     for (const url of directUrls) {
@@ -104,6 +105,14 @@ export async function crawlSources() {
                 console.log(`Scanning page: ${request.url}`);
                 const text = $('body').text();
                 const html = $('body').html();
+
+                // 调试：打印页面所有 <a> 标签的 href
+                console.log('=== All <a> hrefs on this page ===');
+                $('a[href]').each((i, el) => {
+                    const href = $(el).attr('href');
+                    console.log(`  ${href}`);
+                });
+                console.log('====================================');
 
                 // 1. 从当前页面文本提取直接链接
                 const linksFromText = extractLinks(text);
@@ -181,6 +190,7 @@ export async function crawlSources() {
 
                 // 3. 深度控制
                 const currentDepth = request.userData.depth || 1;
+                console.log(`Current depth: ${currentDepth}, maxDepth: ${config.crawler.maxDepth}`);
                 if (currentDepth >= config.crawler.maxDepth) {
                     console.log(`Reached max depth (${currentDepth}) for ${request.url}`);
                     return;
@@ -188,13 +198,17 @@ export async function crawlSources() {
 
                 // 4. 通配符模式匹配：将匹配的链接入队
                 if (globs.length > 0) {
-                    await enqueueLinks({
+                    console.log(`EnqueueLinks with globs:`, globs);
+                    const result = await enqueueLinks({
                         globs: globs,
                         label: 'wildcard-match',
                         userData: {
                             depth: currentDepth + 1
                         }
                     });
+                    console.log(`Enqueued ${result.length} links.`);
+                } else {
+                    console.log('No globs to enqueue.');
                 }
             },
         });
