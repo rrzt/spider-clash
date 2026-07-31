@@ -8,7 +8,7 @@ export default {
         'https://clashnodev2ray.github.io/',
         'https://clashnodev2ray.github.io/*/*/*/free-ssr-node/',
         'https://github.com/free-nodes/v2rayfree',
-        'https://freenode.openrunner.net/tag/v2ray/',
+        'https://freenode.openrunner.net/',
         'https://freenode.openrunner.net/post/*/',
         'https://www.cfmem.com/search/label/free',
         'https://clashgithub.com/category/freenode',
