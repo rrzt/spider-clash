@@ -37,14 +37,21 @@ export async function crawlSources() {
     // 预处理源：分离直接订阅、普通网页、通配符
     const directUrls = [];
     const pageUrls = [];
-    const globs = [];
+    const globs = [];        // 存储完整 URL 模式（仅用于日志）
+    const pathGlobs = [];    // 存储路径模式（用于 enqueueLinks）
 
     config.sources.forEach(url => {
         // 通配符处理：起始页统一为根域名
         if (url.includes('*')) {
             globs.push(url);
+            // 提取路径部分（如 /p/*.html 或 /post/*/）作为 enqueueLinks 的 glob 模式
+            try {
+                const urlObj = new URL(url);
+                pathGlobs.push(urlObj.pathname);
+            } catch (e) {
+                pathGlobs.push(url); // fallback
+            }
             // 使用 URL 对象提取协议+主机名作为起始页
-            // 目的：支持深层通配符（如 /a/*/*.html），确保从首页开始抓取
             const urlObj = new URL(url);
             const startUrl = urlObj.origin + '/';
             console.log(`Wildcard source detected: ${url} -> Start at: ${startUrl}`);
@@ -58,7 +65,8 @@ export async function crawlSources() {
     });
 
     console.log(`Starting crawl. Direct: ${directUrls.length}, Pages: ${pageUrls.length}, Globs: ${globs.length}`);
-    console.log('Globs array:', globs);  // 调试：打印 globs 数组
+    console.log('Globs (full URL):', globs);
+    console.log('Path Globs:', pathGlobs);
 
     // ==================== 处理直接订阅链接 ====================
     for (const url of directUrls) {
@@ -106,13 +114,13 @@ export async function crawlSources() {
                 const text = $('body').text();
                 const html = $('body').html();
 
-                // 调试：打印页面所有 <a> 标签的 href
-                console.log('=== All <a> hrefs on this page ===');
-                $('a[href]').each((i, el) => {
-                    const href = $(el).attr('href');
-                    console.log(`  ${href}`);
-                });
-                console.log('====================================');
+                // 调试：打印页面所有 <a> 标签的 href（可选，如需详细日志可取消注释）
+                // console.log('=== All <a> hrefs on this page ===');
+                // $('a[href]').each((i, el) => {
+                //     const href = $(el).attr('href');
+                //     console.log(`  ${href}`);
+                // });
+                // console.log('====================================');
 
                 // 1. 从当前页面文本提取直接链接
                 const linksFromText = extractLinks(text);
@@ -190,17 +198,17 @@ export async function crawlSources() {
 
                 // 3. 深度控制
                 const currentDepth = request.userData.depth || 1;
-                console.log(`Current depth: ${currentDepth}, maxDepth: ${config.crawler.maxDepth}`);
                 if (currentDepth >= config.crawler.maxDepth) {
                     console.log(`Reached max depth (${currentDepth}) for ${request.url}`);
                     return;
                 }
 
-                // 4. 通配符模式匹配：将匹配的链接入队
-                if (globs.length > 0) {
-                    console.log(`EnqueueLinks with globs:`, globs);
+                // 4. 通配符模式匹配：使用路径模式（pathGlobs）进行入队
+                if (pathGlobs.length > 0) {
+                    console.log(`EnqueueLinks with path globs:`, pathGlobs);
+                    // 注意：enqueueLinks 的 globs 参数支持相对路径，它会基于当前请求 URL 自动补全
                     const result = await enqueueLinks({
-                        globs: globs,
+                        globs: pathGlobs,
                         label: 'wildcard-match',
                         userData: {
                             depth: currentDepth + 1
@@ -208,7 +216,7 @@ export async function crawlSources() {
                     });
                     console.log(`Enqueued ${result.length} links.`);
                 } else {
-                    console.log('No globs to enqueue.');
+                    console.log('No path globs to enqueue.');
                 }
             },
         });
