@@ -1,0 +1,18 @@
+=== Spider-Clash Run Log ===
+Date: 2026-07-31T09:36:35.216Z
+Duration: 8895ms
+
+[Statistics]
+Total Raw Links Found: 64
+Valid Format Nodes: 43
+Validated Available Nodes: 9
+
+[Errors]
+None
+
+[Config]
+Sources: [
+  "https://nodefree.me",
+  "https://nodefree.me/p/*.html"
+]
+============================
