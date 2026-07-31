@@ -44,7 +44,7 @@ export default {
         'https://www.85la.com/internet-access/free-network-nodes',
         'https://www.85la.com/*.html',
         'https://www.stairnode.com/daily/*',
-        #以下链接需用新应用抓取
+        //以下链接需用新应用抓取
         'https://t.me/s/StairNode',
         'https://t.me/s/v2queen',  
         'https://t.me/s/clashjd',        
