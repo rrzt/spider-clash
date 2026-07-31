@@ -5,7 +5,7 @@ export default {
         // 示例: 'vmess://....' (base64 文本内容的 URL)
         'https://nodefree.me',
         'https://nodefree.me/p/*.html',
-                'https://oneclash.cc/',
+         'https://oneclash.cc/',
         'https://oneclash.cc/a/*.html',
         'https://clashnodev2ray.github.io/',
         'https://clashnodev2ray.github.io/*/*/*/free-ssr-node/',
@@ -23,9 +23,8 @@ export default {
         'https://github.com/hwanz/SSR-V2ray-Trojan-vpn',
         'https://nodefree.me',
         'https://nodefree.me/p/*.html',
-        'https://nodefree.me/*/*.html',
         'https://v2rayshare.net',
-        'https://v2rayshare.net/*/*.html',
+        'https://v2rayshare.net/p/*.html',
         'https://jichangx.com/free-subscription',
         'https://jichangx.com/*/',
         'https://clashstair.com/freenode/',
@@ -37,10 +36,10 @@ export default {
         'https://www.mibei77.com/*.html',
         'https://clashnodev2ray.github.io',
         'https://clashnodev2ray.github.io/*/*/*/free-ssr-node/',
-
-        'https://www.proxyqueen.top/*/*/*/',
-
-        'https://wanzhuanmi.com/*/*/',
+        'https://www.proxyqueen.top/'   
+        'https://www.proxyqueen.top/index.php/archives/*/',
+        'https://wanzhuanmi.com/',
+        'https://wanzhuanmi.com/freenode/*/',
         'https://clashnode.cc/free-node/*.htm',
         'https://free.datiya.com',
         'https://free.datiya.com/post/*/',
