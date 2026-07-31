@@ -29,7 +29,7 @@ export default {
         'https://www.freeclashnode.com/free-node',
         'https://www.mibei77.com/*.html',
         'https://clashnodev2ray.github.io',
-        'https://clashnodev2ray.github.io/*/*/*/free-ssr-node/‘，
+        'https://clashnodev2ray.github.io/*/*/*/free-ssr-node/',
 
         'https://www.proxyqueen.top/*/*/*/',
 
