@@ -235,6 +235,162 @@ proxies:
     cipher: auto
     tls: false
     network: tcp
+  - name: 香港(免费节点)_1 - undefinedms
+    type: vmess
+    server: 93ucrn4i0pffuabk.v.3dns.vip
+    port: 443
+    uuid: f23bb427c1f94373876c2f43e9f790f3
+    alterId: 0
+    cipher: auto
+    tls: true
+    network: ws
+    ws-opts:
+      path: /ws-vmess
+      headers:
+        Host: 93ucrn4i0PffUAbk.v.3dns.vip
+  - name: 香港(免费节点)_2 - undefinedms
+    type: vmess
+    server: qtkdr8jxe3wefxjm.v.3dns.vip
+    port: 443
+    uuid: f23bb427c1f94373876c2f43e9f790f3
+    alterId: 0
+    cipher: auto
+    tls: true
+    network: ws
+    ws-opts:
+      path: /ws-vmess
+      headers:
+        Host: qTKDR8jXE3wEFxJM.v.3dns.vip
+  - name: 香港(免费节点)_3 - undefinedms
+    type: vmess
+    server: m01c7b2z26dtqgee.v.3dns.vip
+    port: 443
+    uuid: f23bb427c1f94373876c2f43e9f790f3
+    alterId: 0
+    cipher: auto
+    tls: true
+    network: ws
+    ws-opts:
+      path: /ws-vmess
+      headers:
+        Host: M01c7B2z26DtQGEe.v.3dns.vip
+  - name: 香港(免费节点)_4 - undefinedms
+    type: vmess
+    server: mh7r5ardl0z5jtgy.v.3dns.vip
+    port: 443
+    uuid: f23bb427c1f94373876c2f43e9f790f3
+    alterId: 0
+    cipher: auto
+    tls: true
+    network: ws
+    ws-opts:
+      path: /ws-vmess
+      headers:
+        Host: mh7R5ArdL0z5jTGY.v.3dns.vip
+  - name: 香港(免费节点)_5 - undefinedms
+    type: vmess
+    server: vah4urdzl3jdx5r2.v.3dns.vip
+    port: 443
+    uuid: f23bb427c1f94373876c2f43e9f790f3
+    alterId: 0
+    cipher: auto
+    tls: true
+    network: ws
+    ws-opts:
+      path: /ws-vmess
+      headers:
+        Host: VAH4URdZL3jDX5r2.v.3dns.vip
+  - name: 香港(免费节点)_6 - undefinedms
+    type: vmess
+    server: ejomsxptp19apygl.v.3dns.vip
+    port: 443
+    uuid: f23bb427c1f94373876c2f43e9f790f3
+    alterId: 0
+    cipher: auto
+    tls: true
+    network: ws
+    ws-opts:
+      path: /ws-vmess
+      headers:
+        Host: ejOMsxPtP19APyGL.v.3dns.vip
+  - name: 美国(免费节点)_3 - undefinedms
+    type: vmess
+    server: wwafj5lhl6bi8au9.v.3dns.vip
+    port: 443
+    uuid: f23bb427c1f94373876c2f43e9f790f3
+    alterId: 0
+    cipher: auto
+    tls: true
+    network: ws
+    ws-opts:
+      path: /ws-vmess
+      headers:
+        Host: wwafj5LHl6bI8aU9.v.3dns.vip
+  - name: 美国(免费节点)_7 - undefinedms
+    type: vmess
+    server: 2b9hwy8ocx7q74nm.v.3dns.vip
+    port: 443
+    uuid: f23bb427c1f94373876c2f43e9f790f3
+    alterId: 0
+    cipher: auto
+    tls: true
+    network: ws
+    ws-opts:
+      path: /ws-vmess
+      headers:
+        Host: 2b9hwY8oCx7Q74NM.v.3dns.vip
+  - name: 香港(免费节点)_7 - undefinedms
+    type: vmess
+    server: u2frxj0g13vdi0wo.v.3dns.vip
+    port: 443
+    uuid: f23bb427c1f94373876c2f43e9f790f3
+    alterId: 0
+    cipher: auto
+    tls: true
+    network: ws
+    ws-opts:
+      path: /ws-vmess
+      headers:
+        Host: U2FRxj0G13vDI0Wo.v.3dns.vip
+  - name: 法国(免费节点)_6 - undefinedms
+    type: vmess
+    server: 2001:bc8:32d7:225::3
+    port: 55009
+    uuid: cd80d0a4-a8ef-4492-b956-da82a6cecaf9
+    alterId: 0
+    cipher: auto
+    tls: false
+    network: ws
+    ws-opts:
+      path: /0zNW56sF
+      headers:
+        Host: 2001:bc8:32d7:225::3
+  - name: 英国(免费节点)_4 - undefinedms
+    type: vmess
+    server: mtckundigepwu3up.v.3dns.vip
+    port: 443
+    uuid: f23bb427c1f94373876c2f43e9f790f3
+    alterId: 0
+    cipher: auto
+    tls: true
+    network: ws
+    ws-opts:
+      path: /ws-vmess
+      headers:
+        Host: mTCKUNDiGePwU3uP.v.3dns.vip
+  - name: 香港(免费节点)_8 - undefinedms
+    type: vmess
+    server: zudssgtmrqg9lpvi.v.3dns.vip
+    port: 443
+    uuid: f23bb427c1f94373876c2f43e9f790f3
+    alterId: 0
+    cipher: auto
+    tls: true
+    network: ws
+    ws-opts:
+      path: /ws-vmess
+      headers:
+        Host: zUDssgTMRqg9LpvI.v.3dns.vip
 proxy-groups:
   - name: Auto Select
     type: url-test
@@ -261,6 +417,18 @@ proxy-groups:
       - 🇯🇵_JP_日本->🇺🇸_US_美国 - undefinedms
       - 🇨🇳_CN_中国->🇩🇪_DE_德国 - undefinedms
       - 🇭🇰_HK_中国香港 - undefinedms
+      - 香港(免费节点)_1 - undefinedms
+      - 香港(免费节点)_2 - undefinedms
+      - 香港(免费节点)_3 - undefinedms
+      - 香港(免费节点)_4 - undefinedms
+      - 香港(免费节点)_5 - undefinedms
+      - 香港(免费节点)_6 - undefinedms
+      - 美国(免费节点)_3 - undefinedms
+      - 美国(免费节点)_7 - undefinedms
+      - 香港(免费节点)_7 - undefinedms
+      - 法国(免费节点)_6 - undefinedms
+      - 英国(免费节点)_4 - undefinedms
+      - 香港(免费节点)_8 - undefinedms
     url: http://www.gstatic.com/generate_204
     interval: 300
   - name: Proxy
@@ -289,5 +457,17 @@ proxy-groups:
       - 🇯🇵_JP_日本->🇺🇸_US_美国 - undefinedms
       - 🇨🇳_CN_中国->🇩🇪_DE_德国 - undefinedms
       - 🇭🇰_HK_中国香港 - undefinedms
+      - 香港(免费节点)_1 - undefinedms
+      - 香港(免费节点)_2 - undefinedms
+      - 香港(免费节点)_3 - undefinedms
+      - 香港(免费节点)_4 - undefinedms
+      - 香港(免费节点)_5 - undefinedms
+      - 香港(免费节点)_6 - undefinedms
+      - 美国(免费节点)_3 - undefinedms
+      - 美国(免费节点)_7 - undefinedms
+      - 香港(免费节点)_7 - undefinedms
+      - 法国(免费节点)_6 - undefinedms
+      - 英国(免费节点)_4 - undefinedms
+      - 香港(免费节点)_8 - undefinedms
 rules:
   - MATCH,Proxy
