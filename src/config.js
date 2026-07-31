@@ -3,6 +3,10 @@ export default {
     sources: [
         // 示例: 'https://example.com/free-nodes',
         // 示例: 'vmess://....' (base64 文本内容的 URL)
+        'https://nodefree.me',
+        'https://nodefree.me/p/*.html',
+        'https://nodefree.me/*/*.html'
+   /*     
         'https://oneclash.cc/',
         'https://oneclash.cc/a/*.html',
         'https://clashnodev2ray.github.io/',
@@ -55,6 +59,7 @@ export default {
         'https://t.me/s/clashjd', 
         'https://t.me/s/changfengchannel',       
         'https://www.cfmem.com'
+        */
     ],
     
     // 抓取设置
