@@ -44,6 +44,19 @@ proxies:
       path: /HzuOihB6/
       headers:
         Host: 109.104.152.220
+  - name: 美国 CloudFlare节点 - undefinedms
+    type: vmess
+    server: 104.17.77.77
+    port: 8443
+    uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
+    alterId: 0
+    cipher: auto
+    tls: true
+    network: ws
+    ws-opts:
+      path: /lMnsZUN4/
+      headers:
+        Host: 104.17.77.77
   - name: 🇺🇸_美国_151 - undefinedms
     type: vmess
     server: guanwang.awsno.com
@@ -424,6 +437,7 @@ proxy-groups:
       - 🇫🇷_FR_法国->🇨🇦_CA_加拿大 - undefinedms
       - TG-@vvkj11 - undefinedms
       - TG-@vvkj11 - undefinedms
+      - 美国 CloudFlare节点 - undefinedms
       - 🇺🇸_美国_151 - undefinedms
       - 🇨🇳_中国_152 - undefinedms
       - 🇭🇰_香港_153 - undefinedms
@@ -466,6 +480,7 @@ proxy-groups:
       - 🇫🇷_FR_法国->🇨🇦_CA_加拿大 - undefinedms
       - TG-@vvkj11 - undefinedms
       - TG-@vvkj11 - undefinedms
+      - 美国 CloudFlare节点 - undefinedms
       - 🇺🇸_美国_151 - undefinedms
       - 🇨🇳_中国_152 - undefinedms
       - 🇭🇰_香港_153 - undefinedms
