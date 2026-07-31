@@ -27,20 +27,27 @@ export default {
         'https://nodebuf.com',
         'https://clashgithub.com/category/freenode',
         'https://www.freeclashnode.com/free-node',
-        'https://www.mibei77.com',
+        'https://www.mibei77.com/*.html',
         'https://clashnodev2ray.github.io',
-        'https://t.me/s/clashjd',
-        'https://www.proxyqueen.top',
-        'https://t.me/s/v2queen',
-        'https://wanzhuanmi.com',
-        'https://clashnode.cc/free-node',
+        'https://clashnodev2ray.github.io/*/*/*/free-ssr-node/‘，
+
+        'https://www.proxyqueen.top/*/*/*/',
+
+        'https://wanzhuanmi.com/*/*/',
+        'https://clashnode.cc/free-node/*.htm',
         'https://free.datiya.com',
-        'https://clashgithub.com',
+        'https://free.datiya.com/post/*/',
+        'https://clashgithub.com/*.html',
         'https://oneclash.cc/freenode',
-        'https://www.freev2raynode.com/free-node-subscription',
+        'https://oneclash.cc/a/*.html',
+        'https://www.freev2raynode.com/free-node-subscription/*.htm',
         'https://www.85la.com/internet-access/free-network-nodes',
-        'https://www.stairnode.com/daily',
+        'https://www.85la.com/*.html',
+        'https://www.stairnode.com/daily/*',
+        #以下链接需用新应用抓取
         'https://t.me/s/StairNode',
+        'https://t.me/s/v2queen',  
+        'https://t.me/s/clashjd',        
         'https://www.cfmem.com'
     ],
     
