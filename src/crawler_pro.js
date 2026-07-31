@@ -30,6 +30,37 @@ function cleanUrl(url) {
     return url.replace(/[:,.?!;]+$/, '');
 }
 
+// 统一的请求配置：增加超时时间，伪装浏览器头部
+const axiosConfig = {
+    timeout: 30000, // 30秒
+    headers: {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+        'Accept-Language': 'zh-CN,zh;q=0.9,en;q=0.8',
+        'Accept-Encoding': 'gzip, deflate, br',
+        'Connection': 'keep-alive',
+        'Upgrade-Insecure-Requests': '1'
+    }
+};
+
+// 封装带重试的请求函数
+async function requestWithRetry(url, retries = 3, delay = 1000) {
+    let lastError;
+    for (let i = 0; i < retries; i++) {
+        try {
+            const response = await axios.get(url, axiosConfig);
+            return response;
+        } catch (error) {
+            lastError = error;
+            if (i < retries - 1) {
+                console.log(`请求 ${url} 失败 (${error.message})，${delay}ms 后重试 (${i+1}/${retries})...`);
+                await new Promise(resolve => setTimeout(resolve, delay));
+            }
+        }
+    }
+    throw lastError;
+}
+
 export async function crawlSources() {
     const foundLinks = new Set();
 
@@ -62,7 +93,7 @@ export async function crawlSources() {
     for (const url of directUrls) {
         try {
             console.log(`Fetching subscription: ${url}`);
-            const response = await axios.get(url, { timeout: 10000 });
+            const response = await requestWithRetry(url);
             const content = response.data;
             if (typeof content === 'string') {
                 const links = decodeSubscription(content) || [];
@@ -83,7 +114,7 @@ export async function crawlSources() {
                 });
             }
         } catch (error) {
-            console.error(`Failed to fetch ${url}: ${error.message}`);
+            console.error(`Failed to fetch ${url} after retries: ${error.message}`);
         }
     }
 
@@ -123,11 +154,11 @@ export async function crawlSources() {
                 const textMatches = text.match(urlRegex) || [];
                 textMatches.forEach(m => subLinks.add(cleanUrl(m)));
 
-                // 下载并解析子订阅
+                // 下载并解析子订阅（使用带重试的请求）
                 if (subLinks.size > 0) {
                     const downloadPromises = Array.from(subLinks).map(async (subLink) => {
                         try {
-                            const response = await axios.get(subLink, { timeout: 10000 });
+                            const response = await requestWithRetry(subLink);
                             const content = response.data;
 
                             if (typeof content === 'string') {
@@ -148,7 +179,7 @@ export async function crawlSources() {
                                 }
                             }
                         } catch (err) {
-                            console.error(`Failed to fetch sub-link ${subLink}: ${err.message}`);
+                            console.error(`Failed to fetch sub-link ${subLink} after retries: ${err.message}`);
                         }
                     });
                     await Promise.allSettled(downloadPromises);
