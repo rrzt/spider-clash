@@ -37,19 +37,18 @@ export async function crawlSources() {
     // 预处理源：分离直接订阅、普通网页、通配符
     const directUrls = [];
     const pageUrls = [];
-    const globs = [];        // 存储完整 URL 模式（仅用于日志）
-    const pathGlobs = [];    // 存储路径模式（用于 enqueueLinks）
+    const globPatterns = [];   // 存储路径模式（如 /p/*.html），用于手动匹配
 
     config.sources.forEach(url => {
         // 通配符处理：起始页统一为根域名
         if (url.includes('*')) {
-            globs.push(url);
-            // 提取路径部分（如 /p/*.html 或 /post/*/）作为 enqueueLinks 的 glob 模式
+            // 提取路径部分（如 /p/*.html）
             try {
                 const urlObj = new URL(url);
-                pathGlobs.push(urlObj.pathname);
+                const pathPattern = urlObj.pathname;
+                globPatterns.push(pathPattern);
             } catch (e) {
-                pathGlobs.push(url); // fallback
+                globPatterns.push(url); // fallback
             }
             // 使用 URL 对象提取协议+主机名作为起始页
             const urlObj = new URL(url);
@@ -64,9 +63,8 @@ export async function crawlSources() {
         }
     });
 
-    console.log(`Starting crawl. Direct: ${directUrls.length}, Pages: ${pageUrls.length}, Globs: ${globs.length}`);
-    console.log('Globs (full URL):', globs);
-    console.log('Path Globs:', pathGlobs);
+    console.log(`Starting crawl. Direct: ${directUrls.length}, Pages: ${pageUrls.length}, Patterns: ${globPatterns.length}`);
+    console.log('Path patterns:', globPatterns);
 
     // ==================== 处理直接订阅链接 ====================
     for (const url of directUrls) {
@@ -112,15 +110,6 @@ export async function crawlSources() {
             requestHandler: async ({ $, request, enqueueLinks }) => {
                 console.log(`Scanning page: ${request.url}`);
                 const text = $('body').text();
-                const html = $('body').html();
-
-                // 调试：打印页面所有 <a> 标签的 href（可选，如需详细日志可取消注释）
-                // console.log('=== All <a> hrefs on this page ===');
-                // $('a[href]').each((i, el) => {
-                //     const href = $(el).attr('href');
-                //     console.log(`  ${href}`);
-                // });
-                // console.log('====================================');
 
                 // 1. 从当前页面文本提取直接链接
                 const linksFromText = extractLinks(text);
@@ -133,11 +122,8 @@ export async function crawlSources() {
                 $('a[href]').each((i, el) => {
                     let href = $(el).attr('href');
                     if (href) {
-                        // 将相对路径补全为绝对 URL
-                        // 目的：确保后续 axios 请求能正确访问子订阅
                         try {
                             const absoluteUrl = new URL(href, request.url).href;
-                            // 扩大判断范围：除了 .txt/.yaml/.yml，还包含 subscri 或 feed 关键词的链接
                             if (absoluteUrl && (
                                 absoluteUrl.endsWith('.txt') ||
                                 absoluteUrl.endsWith('.yaml') ||
@@ -146,21 +132,18 @@ export async function crawlSources() {
                             )) {
                                 subLinks.add(absoluteUrl);
                             }
-                        } catch (e) {
-                            // URL 构造失败则忽略
-                        }
+                        } catch (e) {}
                     }
                 });
 
-                // B. 查找文本中的 http 链接（扩大匹配范围）
-                // 正则表达式现在匹配 .txt/.yaml/.yml 或者包含 subscri/feed 的链接
+                // B. 查找文本中的 http 链接
                 const urlRegex = /https?:\/\/[^\s"']+(?:\.(?:txt|yaml|yml)|(?:subscri|feed))/gi;
                 const textMatches = text.match(urlRegex) || [];
                 textMatches.forEach(m => subLinks.add(m));
 
                 console.log(`Found ${subLinks.size} potential subscription links on ${request.url}`);
 
-                // 并发下载子订阅，提升效率
+                // 并发下载子订阅
                 if (subLinks.size > 0) {
                     const downloadPromises = Array.from(subLinks).map(async (subLink) => {
                         try {
@@ -169,17 +152,13 @@ export async function crawlSources() {
                             const content = response.data;
 
                             if (typeof content === 'string') {
-                                // 尝试 Base64 解码
                                 const decoded = decodeSubscription(content);
                                 if (decoded.length > 0) {
                                     decoded.forEach(l => foundLinks.add(l));
                                 }
-                                // 正则提取
                                 const extracted = extractLinks(content);
                                 extracted.forEach(l => foundLinks.add(l));
 
-                                // 对 YAML 子订阅调用 parseClash 解析
-                                // 目的：支持 Clash YAML 格式的订阅文件
                                 if (subLink.endsWith('.yaml') || subLink.endsWith('.yml')) {
                                     const clashProxies = parseClash(content);
                                     clashProxies.forEach(p => {
@@ -203,20 +182,46 @@ export async function crawlSources() {
                     return;
                 }
 
-                // 4. 通配符模式匹配：使用路径模式（pathGlobs）进行入队
-                if (pathGlobs.length > 0) {
-                    console.log(`EnqueueLinks with path globs:`, pathGlobs);
-                    // 注意：enqueueLinks 的 globs 参数支持相对路径，它会基于当前请求 URL 自动补全
-                    const result = await enqueueLinks({
-                        globs: pathGlobs,
-                        label: 'wildcard-match',
-                        userData: {
-                            depth: currentDepth + 1
+                // 4. 手动匹配通配符模式，提取符合条件的链接
+                const matchedUrls = [];
+                if (globPatterns.length > 0) {
+                    // 遍历页面所有 a 标签
+                    $('a[href]').each((i, el) => {
+                        const href = $(el).attr('href');
+                        if (href) {
+                            try {
+                                const absoluteUrl = new URL(href, request.url).href;
+                                // 检查是否匹配任何一个 globPattern
+                                for (const pattern of globPatterns) {
+                                    // 将 glob 模式转换为正则表达式（支持 *）
+                                    const regexPattern = pattern
+                                        .replace(/[.*+?^${}()|[\]\\]/g, '\\$&') // 转义正则特殊字符
+                                        .replace(/\\\*/g, '.*'); // * 转换为 .*
+                                    const regex = new RegExp('^' + regexPattern + '$');
+                                    // 使用路径部分匹配（仅比较 pathname）
+                                    const urlObj = new URL(absoluteUrl);
+                                    if (regex.test(urlObj.pathname)) {
+                                        matchedUrls.push(absoluteUrl);
+                                        break;
+                                    }
+                                }
+                            } catch (e) {}
                         }
                     });
-                    console.log(`Enqueued ${result.length} links.`);
-                } else {
-                    console.log('No path globs to enqueue.');
+                    // 去重
+                    const uniqueUrls = [...new Set(matchedUrls)];
+                    if (uniqueUrls.length > 0) {
+                        console.log(`Manually matched ${uniqueUrls.length} URLs for pattern(s):`, globPatterns);
+                        await enqueueLinks({
+                            urls: uniqueUrls,
+                            label: 'wildcard-match',
+                            userData: {
+                                depth: currentDepth + 1
+                            }
+                        });
+                    } else {
+                        console.log('No URLs matched the glob patterns.');
+                    }
                 }
             },
         });
