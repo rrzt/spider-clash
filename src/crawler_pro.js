@@ -53,7 +53,8 @@ export async function crawlSources() {
             const startUrl = urlObj.origin + '/';
             console.log(`Wildcard source detected: ${url} -> Start at: ${startUrl}`);
             pageUrls.push(startUrl);
-        } else if (url.includes('subscribe') || url.includes('feed') || url.includes('.txt') || url.includes('.yaml')) {
+        // [MOD] 将订阅关键词从 'subscribe' 改为 'subscri'，以同时匹配 'subscribe' 和 'subscription'
+        } else if (url.includes('subscri') || url.includes('feed') || url.includes('.txt') || url.includes('.yaml')) {
             directUrls.push(url);
         } else {
             pageUrls.push(url);
@@ -112,7 +113,7 @@ export async function crawlSources() {
                 const linksFromText = extractLinks(text);
                 [...linksFromText].forEach(link => foundLinks.add(link));
 
-                // 2. 查找页面中的订阅文件链接 (.txt, .yaml, .yml)
+                // 2. 查找页面中的订阅链接（包括 .txt/.yaml/.yml 以及包含 subscri/feed 的链接）
                 const subLinks = new Set();
 
                 // A. 查找 a 标签
@@ -123,7 +124,13 @@ export async function crawlSources() {
                         // 目的：确保后续 axios 请求能正确访问子订阅
                         try {
                             const absoluteUrl = new URL(href, request.url).href;
-                            if (absoluteUrl && (absoluteUrl.endsWith('.txt') || absoluteUrl.endsWith('.yaml') || absoluteUrl.endsWith('.yml'))) {
+                            // [MOD] 扩大判断范围：除了 .txt/.yaml/.yml，还包含 subscri 或 feed 关键词的链接
+                            if (absoluteUrl && (
+                                absoluteUrl.endsWith('.txt') ||
+                                absoluteUrl.endsWith('.yaml') ||
+                                absoluteUrl.endsWith('.yml') ||
+                                /subscri|feed/i.test(absoluteUrl)
+                            )) {
                                 subLinks.add(absoluteUrl);
                             }
                         } catch (e) {
@@ -132,8 +139,9 @@ export async function crawlSources() {
                     }
                 });
 
-                // B. 查找文本中的 http 链接
-                const urlRegex = /https?:\/\/[^\s"']+\.(txt|yaml|yml)/g;
+                // B. 查找文本中的 http 链接（扩大匹配范围）
+                // [MOD] 正则表达式现在匹配 .txt/.yaml/.yml 或者包含 subscri/feed 的链接
+                const urlRegex = /https?:\/\/[^\s"']+(?:\.(?:txt|yaml|yml)|(?:subscri|feed))/gi;
                 const textMatches = text.match(urlRegex) || [];
                 textMatches.forEach(m => subLinks.add(m));
 
