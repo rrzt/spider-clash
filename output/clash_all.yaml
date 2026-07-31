@@ -5,6 +5,138 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
+  - name: TG-@vvkj11 - undefinedms
+    type: vmess
+    server: 23.227.39.11
+    port: 8080
+    uuid: 969f1909-c0d3-4c30-813d-3aec5c838b7d
+    alterId: 0
+    cipher: auto
+    tls: false
+    network: ws
+    ws-opts:
+      path: /1IKYjV0r/
+      headers:
+        Host: dongtaiwang15.dtku47.xyz
+  - name: TG-@vvkj11 - undefinedms
+    type: vmess
+    server: 109.104.152.220
+    port: 23099
+    uuid: 5e3ce6a7-170e-4939-9aae-c8fefb35a7ea
+    alterId: 0
+    cipher: auto
+    tls: false
+    network: ws
+    ws-opts:
+      path: /HzuOihB6/
+      headers:
+        Host: 109.104.152.220
+  - name: 🇺🇸_美国_151 - undefinedms
+    type: vmess
+    server: guanwang.awsno.com
+    port: 443
+    uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
+    alterId: 0
+    cipher: auto
+    tls: true
+    network: tcp
+  - name: 🇨🇳_中国_152 - undefinedms
+    type: vmess
+    server: v9.hdacd.com
+    port: 30809
+    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+    alterId: 2
+    cipher: auto
+    tls: false
+    network: tcp
+  - name: 🇭🇰_香港_153 - undefinedms
+    type: vmess
+    server: 47.86.167.194
+    port: 800
+    uuid: f2c67cae-c09d-4739-947d-f5302d87a3c0
+    alterId: 0
+    cipher: auto
+    tls: false
+    network: tcp
+  - name: 🇮🇷_伊朗_156 - undefinedms
+    type: vmess
+    server: tun1.wizardx1.com
+    port: 2078
+    uuid: 8c207682-e007-4a0d-88a3-68b8638b3d10
+    alterId: 0
+    cipher: auto
+    tls: false
+    network: tcp
+  - name: 🇲🇾_马来西亚_190 - undefinedms
+    type: vmess
+    server: cindy52.ceoiii.com
+    port: 36803
+    uuid: a6ab6513-6ec3-327f-a068-b89fe72954b8
+    alterId: 0
+    cipher: auto
+    tls: false
+    network: ws
+    ws-opts:
+      path: /hls/cctv5phd.m3u8
+      headers:
+        Host: ajax.microsoft.com
+  - name: 🇫🇷_法国_192 - undefinedms
+    type: vmess
+    server: 2001:bc8:32d7:225::3
+    port: 55009
+    uuid: cd80d0a4-a8ef-4492-b956-da82a6cecaf9
+    alterId: 0
+    cipher: auto
+    tls: false
+    network: ws
+    ws-opts:
+      path: /0zNW56sF
+      headers:
+        Host: 2001:bc8:32d7:225::3
+  - name: 🇲🇽_墨西哥_203 - undefinedms
+    type: vmess
+    server: cindy50.ceoiii.com
+    port: 36801
+    uuid: a6ab6513-6ec3-327f-a068-b89fe72954b8
+    alterId: 0
+    cipher: auto
+    tls: false
+    network: ws
+    ws-opts:
+      path: /hls/cctv5phd.m3u8
+      headers:
+        Host: ajax.microsoft.com
+  - name: US美国(v2clash.blog 2026-6.4更新) - undefinedms
+    type: vmess
+    server: 82.198.246.250
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    network: tcp
+  - name: DE德国(v2clash.blog 2026-6.4更新) - undefinedms
+    type: vmess
+    server: 82.198.246.250
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    network: tcp
+  - name: FR法国(v2clash.blog 2026-7.29更新) - undefinedms
+    type: vmess
+    server: 2001:bc8:32d7:225::3
+    port: 55009
+    uuid: cd80d0a4-a8ef-4492-b956-da82a6cecaf9
+    alterId: 0
+    cipher: auto
+    tls: false
+    network: ws
+    ws-opts:
+      path: /0zNW56sF
+      headers:
+        Host: 2001:bc8:32d7:225::3
   - name: 🇨🇳_CN_中国->🇺🇸_US_美国 - undefinedms
     type: vmess
     server: v29.hdacd.com
@@ -107,6 +239,18 @@ proxy-groups:
   - name: Auto Select
     type: url-test
     proxies:
+      - TG-@vvkj11 - undefinedms
+      - TG-@vvkj11 - undefinedms
+      - 🇺🇸_美国_151 - undefinedms
+      - 🇨🇳_中国_152 - undefinedms
+      - 🇭🇰_香港_153 - undefinedms
+      - 🇮🇷_伊朗_156 - undefinedms
+      - 🇲🇾_马来西亚_190 - undefinedms
+      - 🇫🇷_法国_192 - undefinedms
+      - 🇲🇽_墨西哥_203 - undefinedms
+      - US美国(v2clash.blog 2026-6.4更新) - undefinedms
+      - DE德国(v2clash.blog 2026-6.4更新) - undefinedms
+      - FR法国(v2clash.blog 2026-7.29更新) - undefinedms
       - 🇨🇳_CN_中国->🇺🇸_US_美国 - undefinedms
       - 🇭🇰_HK_中国香港 - undefinedms
       - 🇺🇸_US_美国 - undefinedms
@@ -123,6 +267,18 @@ proxy-groups:
     type: select
     proxies:
       - Auto Select
+      - TG-@vvkj11 - undefinedms
+      - TG-@vvkj11 - undefinedms
+      - 🇺🇸_美国_151 - undefinedms
+      - 🇨🇳_中国_152 - undefinedms
+      - 🇭🇰_香港_153 - undefinedms
+      - 🇮🇷_伊朗_156 - undefinedms
+      - 🇲🇾_马来西亚_190 - undefinedms
+      - 🇫🇷_法国_192 - undefinedms
+      - 🇲🇽_墨西哥_203 - undefinedms
+      - US美国(v2clash.blog 2026-6.4更新) - undefinedms
+      - DE德国(v2clash.blog 2026-6.4更新) - undefinedms
+      - FR法国(v2clash.blog 2026-7.29更新) - undefinedms
       - 🇨🇳_CN_中国->🇺🇸_US_美国 - undefinedms
       - 🇭🇰_HK_中国香港 - undefinedms
       - 🇺🇸_US_美国 - undefinedms
