@@ -1,5 +1,5 @@
 import config from './config.js';
-import { crawlSources } from './crawler.js';
+import { crawlSources } from './crawler_pro.js';
 import { parseNode } from './parser.js';
 import { validateNodes } from './validator.js';
 import { saveResults, exportClash, exportSubscribe, saveRunLog } from './exporter.js';
