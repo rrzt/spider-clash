@@ -36,7 +36,7 @@ export default {
         'https://www.mibei77.com/*.html',
         'https://clashnodev2ray.github.io',
         'https://clashnodev2ray.github.io/*/*/*/free-ssr-node/',
-        'https://www.proxyqueen.top/'   
+        'https://www.proxyqueen.top/',  
         'https://www.proxyqueen.top/index.php/archives/*/',
         'https://wanzhuanmi.com/',
         'https://wanzhuanmi.com/freenode/*/',
