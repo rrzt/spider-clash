@@ -5,7 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-  - name: 🇨🇳_CN_中国->🇺🇸_US_美国 - 520ms
+  - name: 🇨🇳_CN_中国->🇺🇸_US_美国 - 534ms
     type: vmess
     server: v29.hdacd.com
     port: 30829
@@ -14,7 +14,7 @@ proxies:
     cipher: auto
     tls: false
     network: tcp
-  - name: 🇭🇰_HK_中国香港 - 635ms
+  - name: 🇭🇰_HK_中国香港 - 578ms
     type: vmess
     server: n1747624260.4u9ma.icu
     port: 443
@@ -27,7 +27,7 @@ proxies:
       path: /
       headers:
         Host: n1747624260.4u9ma.icu
-  - name: 🇺🇸_US_美国 - 438ms
+  - name: 🇺🇸_US_美国 - 417ms
     type: vmess
     server: guanwang.awsno.com
     port: 443
@@ -36,7 +36,7 @@ proxies:
     cipher: auto
     tls: true
     network: tcp
-  - name: 🇯🇵_JP_日本->🇸🇬_SG_新加坡 - 654ms
+  - name: 🇯🇵_JP_日本->🇸🇬_SG_新加坡 - 574ms
     type: vmess
     server: v45.hdacd.com
     port: 30845
@@ -45,7 +45,7 @@ proxies:
     cipher: auto
     tls: false
     network: tcp
-  - name: 🇭🇰_HK_中国香港 - 189ms
+  - name: 🇭🇰_HK_中国香港 - 175ms
     type: vmess
     server: 47.244.120.197
     port: 44867
@@ -58,7 +58,7 @@ proxies:
       path: /arki?ed=2048
       headers:
         Host: 47.244.120.197
-  - name: 🇨🇳_CN_中国->🇺🇸_US_美国 - 654ms
+  - name: 🇨🇳_CN_中国->🇺🇸_US_美国 - 572ms
     type: vmess
     server: v4.hdacd.com
     port: 30804
@@ -67,7 +67,7 @@ proxies:
     cipher: auto
     tls: false
     network: tcp
-  - name: 🇨🇳_CN_中国->🇺🇸_US_美国 - 656ms
+  - name: 🇨🇳_CN_中国->🇺🇸_US_美国 - 652ms
     type: vmess
     server: v8.hdacd.com
     port: 30808
@@ -76,7 +76,7 @@ proxies:
     cipher: auto
     tls: false
     network: tcp
-  - name: 🇯🇵_JP_日本->🇺🇸_US_美国 - 656ms
+  - name: 🇯🇵_JP_日本->🇺🇸_US_美国 - 651ms
     type: vmess
     server: v24.hdacd.com
     port: 30824
@@ -85,7 +85,7 @@ proxies:
     cipher: auto
     tls: false
     network: tcp
-  - name: 🇨🇳_CN_中国->🇩🇪_DE_德国 - 658ms
+  - name: 🇨🇳_CN_中国->🇩🇪_DE_德国 - 652ms
     type: vmess
     server: v33.hdacd.com
     port: 30833
@@ -98,29 +98,29 @@ proxy-groups:
   - name: Auto Select
     type: url-test
     proxies:
-      - 🇨🇳_CN_中国->🇺🇸_US_美国 - 520ms
-      - 🇭🇰_HK_中国香港 - 635ms
-      - 🇺🇸_US_美国 - 438ms
-      - 🇯🇵_JP_日本->🇸🇬_SG_新加坡 - 654ms
-      - 🇭🇰_HK_中国香港 - 189ms
-      - 🇨🇳_CN_中国->🇺🇸_US_美国 - 654ms
-      - 🇨🇳_CN_中国->🇺🇸_US_美国 - 656ms
-      - 🇯🇵_JP_日本->🇺🇸_US_美国 - 656ms
-      - 🇨🇳_CN_中国->🇩🇪_DE_德国 - 658ms
+      - 🇨🇳_CN_中国->🇺🇸_US_美国 - 534ms
+      - 🇭🇰_HK_中国香港 - 578ms
+      - 🇺🇸_US_美国 - 417ms
+      - 🇯🇵_JP_日本->🇸🇬_SG_新加坡 - 574ms
+      - 🇭🇰_HK_中国香港 - 175ms
+      - 🇨🇳_CN_中国->🇺🇸_US_美国 - 572ms
+      - 🇨🇳_CN_中国->🇺🇸_US_美国 - 652ms
+      - 🇯🇵_JP_日本->🇺🇸_US_美国 - 651ms
+      - 🇨🇳_CN_中国->🇩🇪_DE_德国 - 652ms
     url: http://www.gstatic.com/generate_204
     interval: 300
   - name: Proxy
     type: select
     proxies:
       - Auto Select
-      - 🇨🇳_CN_中国->🇺🇸_US_美国 - 520ms
-      - 🇭🇰_HK_中国香港 - 635ms
-      - 🇺🇸_US_美国 - 438ms
-      - 🇯🇵_JP_日本->🇸🇬_SG_新加坡 - 654ms
-      - 🇭🇰_HK_中国香港 - 189ms
-      - 🇨🇳_CN_中国->🇺🇸_US_美国 - 654ms
-      - 🇨🇳_CN_中国->🇺🇸_US_美国 - 656ms
-      - 🇯🇵_JP_日本->🇺🇸_US_美国 - 656ms
-      - 🇨🇳_CN_中国->🇩🇪_DE_德国 - 658ms
+      - 🇨🇳_CN_中国->🇺🇸_US_美国 - 534ms
+      - 🇭🇰_HK_中国香港 - 578ms
+      - 🇺🇸_US_美国 - 417ms
+      - 🇯🇵_JP_日本->🇸🇬_SG_新加坡 - 574ms
+      - 🇭🇰_HK_中国香港 - 175ms
+      - 🇨🇳_CN_中国->🇺🇸_US_美国 - 572ms
+      - 🇨🇳_CN_中国->🇺🇸_US_美国 - 652ms
+      - 🇯🇵_JP_日本->🇺🇸_US_美国 - 651ms
+      - 🇨🇳_CN_中国->🇩🇪_DE_德国 - 652ms
 rules:
   - MATCH,Proxy
