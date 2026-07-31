@@ -4,8 +4,7 @@ export default {
         // 示例: 'https://example.com/free-nodes',
         // 示例: 'vmess://....' (base64 文本内容的 URL)
         'https://nodefree.me',
-        'https://nodefree.me/p/*.html',
-        'https://nodefree.me/*/*.html'
+        'https://nodefree.me/p/*.html'
 
     ],
     
