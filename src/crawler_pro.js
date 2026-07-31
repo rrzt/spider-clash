@@ -25,6 +25,11 @@ import config from './config.js';
 import { decodeSubscription, extractLinks, parseClash } from './parser.js';
 import axios from 'axios';
 
+// 辅助函数：清理链接末尾的标点符号（如 : , . ? ! ;）
+function cleanUrl(url) {
+    return url.replace(/[:,.?!;]+$/, '');
+}
+
 export async function crawlSources() {
     const foundLinks = new Set();
 
@@ -62,16 +67,16 @@ export async function crawlSources() {
             if (typeof content === 'string') {
                 const links = decodeSubscription(content) || [];
                 if (links.length > 0) {
-                    links.forEach(l => foundLinks.add(l));
+                    links.forEach(l => foundLinks.add(cleanUrl(l)));
                 } else {
                     const extracted = extractLinks(content);
-                    extracted.forEach(l => foundLinks.add(l));
+                    extracted.forEach(l => foundLinks.add(cleanUrl(l)));
                 }
 
                 const clashProxies = parseClash(content);
                 clashProxies.forEach(p => {
                     if (p.original && typeof p.original === 'string') {
-                        foundLinks.add(p.original);
+                        foundLinks.add(cleanUrl(p.original));
                     } else {
                         console.warn(`Clash proxy lacks original string:`, p);
                     }
@@ -92,7 +97,7 @@ export async function crawlSources() {
 
                 // 提取页面文本中的直接链接
                 const linksFromText = extractLinks(text);
-                [...linksFromText].forEach(link => foundLinks.add(link));
+                [...linksFromText].forEach(link => foundLinks.add(cleanUrl(link)));
 
                 // 查找订阅链接
                 const subLinks = new Set();
@@ -101,13 +106,14 @@ export async function crawlSources() {
                     if (href) {
                         try {
                             const absoluteUrl = new URL(href, request.url).href;
-                            if (absoluteUrl && (
-                                absoluteUrl.endsWith('.txt') ||
-                                absoluteUrl.endsWith('.yaml') ||
-                                absoluteUrl.endsWith('.yml') ||
-                                /subscri|feed/i.test(absoluteUrl)
+                            const cleaned = cleanUrl(absoluteUrl);
+                            if (cleaned && (
+                                cleaned.endsWith('.txt') ||
+                                cleaned.endsWith('.yaml') ||
+                                cleaned.endsWith('.yml') ||
+                                /subscri|feed/i.test(cleaned)
                             )) {
-                                subLinks.add(absoluteUrl);
+                                subLinks.add(cleaned);
                             }
                         } catch (e) {}
                     }
@@ -115,7 +121,7 @@ export async function crawlSources() {
 
                 const urlRegex = /https?:\/\/[^\s"']+(?:\.(?:txt|yaml|yml)|(?:subscri|feed))/gi;
                 const textMatches = text.match(urlRegex) || [];
-                textMatches.forEach(m => subLinks.add(m));
+                textMatches.forEach(m => subLinks.add(cleanUrl(m)));
 
                 // 下载并解析子订阅
                 if (subLinks.size > 0) {
@@ -127,16 +133,16 @@ export async function crawlSources() {
                             if (typeof content === 'string') {
                                 const decoded = decodeSubscription(content);
                                 if (decoded.length > 0) {
-                                    decoded.forEach(l => foundLinks.add(l));
+                                    decoded.forEach(l => foundLinks.add(cleanUrl(l)));
                                 }
                                 const extracted = extractLinks(content);
-                                extracted.forEach(l => foundLinks.add(l));
+                                extracted.forEach(l => foundLinks.add(cleanUrl(l)));
 
                                 if (subLink.endsWith('.yaml') || subLink.endsWith('.yml')) {
                                     const clashProxies = parseClash(content);
                                     clashProxies.forEach(p => {
                                         if (p.original && typeof p.original === 'string') {
-                                            foundLinks.add(p.original);
+                                            foundLinks.add(cleanUrl(p.original));
                                         }
                                     });
                                 }
